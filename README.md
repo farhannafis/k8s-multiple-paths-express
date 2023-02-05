@@ -29,7 +29,7 @@ ingress-nginx-controller-59b45fb494-26npt   1/1     Running     0          11m
 
 ### Add Service definition into the cluster
 
-``bash
+```bash
 kubectl apply -f kube/foo.yaml
 kubectl apply -f kube/bar.yaml
 ```
