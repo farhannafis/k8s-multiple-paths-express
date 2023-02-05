@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: k8s-multiple-paths-express-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - http:
+      paths:
+        - path: /foo
+          pathType: Prefix
+          backend:
+            service: 
+              name: foo-service
+              port:
+                number: 3000
+        - path: /bar
+          pathType: Prefix
+          backend:
+            service: 
+              name: bar-service
+              port: 
+                number: 3001
